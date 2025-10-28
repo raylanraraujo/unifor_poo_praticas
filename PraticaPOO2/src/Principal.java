@@ -22,7 +22,6 @@ public class Principal {
         carroPasseio.passear();
         carroEsportivo.frear();
     }
-
 }
 
 /*
@@ -39,16 +38,19 @@ Instanciar é como se eu tivesse pegando esse molde dessa classe Carro em branco
 
 Depois de instanciar é que eu faco a inclusao dos valores dos atributos através dos métodos setters correspondentes. 
 
-Se eu colocar para exibir na tela com o comando abaixo:
-    System.out.println(carro); 
+IMPRIMINDO AS INFORMAÇÕES NA TELA
+    Se eu colocar para exibir na tela com o comando abaixo:
+        
+        System.out.println(carro); 
 
     A saída nao sera das informações que eu inclui. Na verdade será impresso apenas o código com o espaço na memoria que as informacoes estao no meu computador. 
 
-Para imprimir de fato os valores que foram inseridos eu tenho que definir um método toString() na classe Carro para imprimir aquilo que eu quero. PAra isso eu vou na Classe Carro, clico com o botao direito e seleciono "Ação do código..." e ai peço para ser gerado o método toString()
+    Para imprimir de fato os valores que foram inseridos eu tenho que definir um método toString() na classe Carro para imprimir aquilo que eu quero. PAra isso eu vou na Classe Carro, clico com o botao direito e seleciono "Ação do código..." e ai peço para ser gerado o método toString()
 
- Inserir as informações através dos setters acaba ficando muito trabalhoso. Nesse caso é tranquilo porque só temos 3 atributos, mas se fossem 10 ou mais seria complicado. Por conta disso vamos usar os construtores da classe. A funcionalidade do método construtor é pegar esses valores passados como argumento e atribuir esses valores das variáveis no momento da instanciação da variável. 
+MÉTODO CONSTRUTOR
+    Inserir as informações através dos setters acaba ficando muito trabalhoso. Nesse caso é tranquilo porque só temos 3 atributos, mas se fossem 10 ou mais seria complicado. Por conta disso vamos usar os construtores da classe. A funcionalidade do método construtor é pegar esses valores passados como argumento e atribuir esses valores das variáveis no momento da instanciação da variável. 
     
- Quando eu vou na classe Carro e crio a classe Construtor ele vai dar um erro porque ele quer que eu vá no programa principal e informe os valores das variaveis que ele pede como argumento. E eu posso criar mais de um construtor na minha classe.
+    OBSERVAÇÃO: Quando eu vou na classe Carro e crio a classe Construtor ele vai dar um erro porque ele quer que eu vá no programa principal e informe os valores das variaveis que ele pede como argumento. E eu posso criar mais de um construtor na minha classe.
 
 
  Criamos classes novas (CarroEsportivo e CarroPasseio) para serem classes filhas de Carro. Quando criei e coloquei o extends apareceu um erro. Entao eu so preciso criar um construtor em cada classe filha que o erro some
