@@ -30,6 +30,4 @@ public class Disciplina {
     public void setSemestre(int semestre) {
         this.semestre = semestre;
     }
-
-    
 }
