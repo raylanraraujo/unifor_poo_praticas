@@ -21,5 +21,4 @@ public class Professor extends Pessoa{
     public void darAula(){
         System.out.println("Ministrando aula.");
     }
-
 }
