@@ -11,7 +11,7 @@ public class Disciplina {
         this.semestre = semestre;
     }
 
-    //Métodos Getters e Setters
+    //métodos getters e setters
     public int getCodigo() {
         return codigo;
     }
