@@ -30,4 +30,9 @@ public abstract class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
+    //métodos próprios
+    public void fazerAniversario(){
+        this.idade++;
+    }   
 }
