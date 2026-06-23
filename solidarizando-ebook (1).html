@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Completo Do Voluntariado No Brasil | Solidarizando</title>
+<meta name="description" content="Guia Completo do Voluntariado no Brasil é um material prático para quem deseja transformar a vontade de ajudar em ações concretas. Descubra como encontrar causas alinhadas aos seus valores, atuar com segurança, conhecer seus direitos, evitar erros comuns e gerar impacto real na sociedade.">
+<meta property="og:title" content="Guia Completo Do Voluntariado No Brasil | Solidarizando">
+<meta property="og:description" content="Guia Completo do Voluntariado no Brasil é um material prático para quem deseja transformar a vontade de ajudar em ações concretas.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1597d4;
+    --blue-deep:#0a5e8c;
+    --blue-soft:#e7f4fb;
+    --cream:#f5fafd;
+    --ink:#16242e;
+    --ink-soft:#46555f;
+    --amber:#f0883e;
+    --amber-deep:#d96f24;
+    --line:#dde7ee;
+    --white:#ffffff;
+    --shadow:0 18px 50px -24px rgba(10,94,140,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1080px,92vw);margin-inline:auto}
+  .narrow{width:min(720px,92vw);margin-inline:auto}
+  section{padding:clamp(3.5rem,7vw,6rem) 0}
+  .eyebrow{
+    font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);margin-bottom:1rem;display:inline-block;
+  }
+  h1,h2,h3{font-family:"Fraunces",serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  h1{font-size:clamp(2.1rem,5.2vw,3.4rem)}
+  h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+  h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+  p{color:var(--ink-soft)}
+  .lead{font-size:clamp(1.05rem,1.6vw,1.2rem)}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--amber);color:#fff;font-weight:600;
+    padding:1rem 1.9rem;border-radius:999px;font-size:1.02rem;
+    box-shadow:0 12px 28px -10px rgba(217,111,36,.6);
+    transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+  }
+  .btn:hover{background:var(--amber-deep);transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(217,111,36,.7)}
+  .btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+  .btn-ghost{background:transparent;color:var(--blue-deep);box-shadow:none;border:1.5px solid var(--blue)}
+  .btn-ghost:hover{background:var(--blue-soft);transform:translateY(-2px)}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(170deg,var(--blue-deep),var(--blue) 62%,#1287c4);
+    color:#fff;text-align:center;position:relative;overflow:hidden;
+    padding-top:clamp(2.5rem,5vw,3.5rem);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%,rgba(255,255,255,.14),transparent 55%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:1}
+  .hero-logo{width:148px;margin:0 auto 2rem;filter:brightness(0) invert(1)}
+  .hero .eyebrow{color:#bfe3f5}
+  .hero h1{color:#fff;margin-bottom:1.1rem;max-width:18ch;margin-inline:auto}
+  .hero .sub{color:#d6edf9;font-size:clamp(1.02rem,1.7vw,1.18rem);max-width:48ch;margin:0 auto 2rem}
+  .hero .btn{margin-bottom:1.2rem}
+  .trust{font-size:.86rem;color:#bfe3f5;letter-spacing:.01em}
+  .hero-community{
+    margin-top:2.6rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.18);
+  }
+  .hero-community p{color:#cfe7f5;font-size:.95rem;margin-bottom:1.3rem}
+  .hero-img{border-radius:20px;box-shadow:0 30px 60px -30px rgba(0,0,0,.5);margin-inline:auto;max-width:760px}
+
+  /* Generic section heads */
+  .head{text-align:center;max-width:42ch;margin:0 auto 3rem}
+  .head h2{margin-bottom:1rem}
+
+  /* Doubts grid */
+  .doubts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:2.5rem}
+  .doubt{
+    background:var(--white);border:1px solid var(--line);border-radius:16px;
+    padding:1.4rem 1.5rem;display:flex;gap:.85rem;align-items:flex-start;
+    font-weight:500;color:var(--ink);box-shadow:var(--shadow);
+  }
+  .doubt .dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--amber);margin-top:.55rem}
+
+  /* Routine block */
+  .routine{background:var(--blue-soft)}
+  .routine .narrow{text-align:center}
+  .routine h2{margin-bottom:1.4rem}
+  .routine p{font-size:1.1rem;margin-bottom:1rem}
+  .routine .pull{font-family:"Fraunces",serif;font-size:1.35rem;color:var(--blue-deep);font-weight:600;line-height:1.3;margin-top:1.5rem}
+
+  /* Parts */
+  .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:1rem}
+  .part{
+    background:var(--white);border:1px solid var(--line);border-radius:18px;
+    padding:1.8rem;box-shadow:var(--shadow);position:relative;
+  }
+  .part .num{
+    font-family:"Fraunces",serif;font-size:.92rem;font-weight:600;color:#fff;
+    background:var(--blue);width:2.3rem;height:2.3rem;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;
+  }
+  .part h3{margin-bottom:.6rem;font-size:1.18rem}
+  .parts-foot{text-align:center;margin-top:2.2rem;font-weight:500;color:var(--blue-deep)}
+
+  /* Tools */
+  .tools{background:var(--blue-deep);color:#fff}
+  .tools .head h2{color:#fff}
+  .tools .head p{color:#cfe7f5}
+  .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+  .tool{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:18px;padding:1.8rem;
+  }
+  .tool .tag{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:.8rem;display:block}
+  .tool h3{color:#fff;margin-bottom:.6rem}
+  .tool p{color:#cfe7f5}
+  .tools .btn{margin-top:2.5rem;display:flex;width:max-content;margin-inline:auto}
+
+  /* For whom */
+  .forwhom ul{list-style:none;display:grid;gap:.9rem;margin-top:2rem}
+  .forwhom li{
+    background:var(--white);border:1px solid var(--line);border-left:4px solid var(--blue);
+    border-radius:12px;padding:1.1rem 1.4rem;color:var(--ink);font-weight:500;
+  }
+
+  /* Stats */
+  .stats{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;margin:2rem 0}
+  .stat .n{font-family:"Fraunces",serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--blue)}
+  .stat .l{font-size:.92rem;color:var(--ink-soft);font-weight:500}
+  .founder{max-width:54ch;margin:0 auto;text-align:center}
+  .founder p{margin-bottom:.6rem}
+  .micro{text-align:center;font-size:.82rem;color:#8a8f8a;margin-top:.5rem}
+
+  /* Testimonials */
+  .tcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;margin-top:1rem}
+  .tcard{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+  .tcard .video{aspect-ratio:16/9;background:#000}
+  .tcard .video iframe{width:100%;height:100%;border:0;display:block}
+  .tcard .body{padding:1.3rem 1.5rem}
+  .tcard blockquote{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--ink);line-height:1.35;margin-bottom:.7rem}
+  .tcard cite{font-style:normal;font-size:.88rem;color:var(--ink-soft);font-weight:500}
+
+  /* Offer */
+  .offer{background:var(--blue-soft)}
+  .offer-card{
+    background:var(--white);border:1px solid var(--line);border-radius:24px;
+    box-shadow:0 30px 70px -30px rgba(10,94,140,.35);
+    max-width:680px;margin:0 auto;overflow:hidden;
+  }
+  .offer-card .top{padding:2.2rem 2.4rem 1.6rem}
+  .offer-list{list-style:none;display:grid;gap:.8rem;margin-bottom:1.6rem}
+  .offer-list li{display:flex;gap:.7rem;align-items:flex-start;color:var(--ink);font-weight:500}
+  .offer-list .check{flex:none;width:1.4rem;height:1.4rem;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;margin-top:.15rem}
+  .price-row{background:var(--blue-deep);color:#fff;text-align:center;padding:2rem 2.4rem}
+  .price-row .lab{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#bfe3f5}
+  .price-row .price{font-family:"Fraunces",serif;font-size:3.4rem;font-weight:700;line-height:1;margin:.3rem 0 .8rem}
+  .price-row .meta{font-size:.86rem;color:#cfe7f5;margin-bottom:1.4rem}
+  .price-row .btn{width:100%;justify-content:center}
+  .offer-note{max-width:54ch;margin:2rem auto 0;text-align:center;font-size:.98rem}
+
+  /* Guarantee */
+  .guarantee{text-align:center}
+  .guarantee .seal{
+    width:96px;height:96px;border-radius:50%;background:var(--amber);color:#fff;
+    font-family:"Fraunces",serif;font-weight:700;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;margin:0 auto 1.5rem;line-height:1;
+    box-shadow:0 16px 34px -12px rgba(217,111,36,.6);
+  }
+  .guarantee .seal b{font-size:1.7rem}
+  .guarantee .seal span{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;margin-top:.2rem}
+  .guarantee .narrow p{font-size:1.05rem;margin-top:1rem}
+  .guarantee .sig{margin-top:1.3rem;font-weight:600;color:var(--blue-deep)}
+
+  /* FAQ */
+  .faq{background:var(--white);border-top:1px solid var(--line)}
+  .faq-list{max-width:760px;margin:0 auto;display:grid;gap:.8rem}
+  details{
+    border:1px solid var(--line);border-radius:14px;background:var(--cream);overflow:hidden;
+  }
+  summary{
+    cursor:pointer;list-style:none;padding:1.2rem 1.4rem;font-weight:600;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;font-size:1.02rem;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:1.5rem;color:var(--blue);font-weight:400;flex:none;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 1.4rem 1.3rem;color:var(--ink-soft)}
+
+  /* Final */
+  .final{background:linear-gradient(170deg,var(--blue),var(--blue-deep));color:#fff;text-align:center}
+  .final h2{color:#fff;max-width:20ch;margin:0 auto 1.4rem}
+  .final p{color:#d6edf9;font-size:1.08rem;margin-bottom:.4rem}
+  .final .btn{margin-top:1.8rem}
+
+  /* Footer */
+  footer{background:var(--ink);color:#aeb6b0;padding:3rem 0 2.5rem;text-align:center;font-size:.86rem}
+  footer .flogo{width:120px;margin:0 auto 1.6rem;filter:brightness(0) invert(1);opacity:.9}
+  .social{display:flex;gap:1.4rem;justify-content:center;margin-bottom:1.6rem;flex-wrap:wrap}
+  .social a{color:#cdd4ce;font-weight:500}
+  .social a:hover{color:#fff}
+  .flinks{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.4rem;font-size:.8rem;letter-spacing:.04em}
+  .flinks a{color:#aeb6b0}
+  .flinks a:hover{color:#fff}
+  footer .legal{max-width:60ch;margin:0 auto;color:#7f867f;font-size:.78rem;line-height:1.55}
+
+  @media(max-width:640px){
+    .stat-grid{grid-template-columns:repeat(2,1fr);gap:1.8rem}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="https://solidarizando.activehosted.com/content/6dqGbk/2026/05/11/39e439c2-0e22-45c1-b87c-0f983748b939.png" alt="Solidarizando">
+    <span class="eyebrow">Guia + 3 ferramentas práticas</span>
+    <h1>Da vontade de ajudar ao primeiro passo real.</h1>
+    <p class="sub">Descubra qual causa combina com você, encontre oportunidades seguras e comece com clareza, mesmo que nunca tenha se voluntariado antes.</p>
+    <a href="#oferta" class="btn">Quero começar minha jornada</a>
+    <p class="trust">Acesso imediato • 7 dias de garantia sem burocracia • Pagamento seguro.</p>
+    <div class="hero-community">
+      <p>Uma comunidade com mais de 180 mil pessoas conectadas a causas sociais</p>
+      <img class="hero-img" src="https://solidarizando.activehosted.com/content/6dqGbk/2026/06/14/db985abe-cb53-48bd-8227-d8df9451288c.png" alt="Comunidade Solidarizando">
+    </div>
+  </div>
+</header>
+
+<!-- VIDEO MESSAGE -->
+<section>
+  <div class="narrow" style="text-align:center">
+    <span class="eyebrow">Antes de tudo, assista</span>
+    <h2>Antes de comprar o guia, assista a esta mensagem</h2>
+    <p class="lead" style="margin:1.2rem 0">Uma mensagem de Marcus Rubortone, fundador da Solidarizando. Uma história real sobre voluntariado, propósito e o primeiro passo que pode mudar a forma como você se conecta com uma causa.</p>
+    <a href="#oferta" class="btn">Quero acessar o guia agora: R$ 47</a>
+  </div>
+</section>
+
+<!-- DOUBTS -->
+<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Para quem sente vontade</span>
+      <h2>Você sente vontade de ajudar. Mas a vontade ainda não virou ação.</h2>
+      <p>Talvez você já tenha visto uma causa e pensado: “quero fazer parte disso”. Mas logo veio a dúvida. Isso não é falta de empatia. Isso não é egoísmo.</p>
+    </div>
+    <div class="doubts">
+      <div class="doubt"><span class="dot"></span>Qual causa escolher?</div>
+      <div class="doubt"><span class="dot"></span>Onde encontrar uma instituição confiável?</div>
+      <div class="doubt"><span class="dot"></span>Quanto tempo eu preciso dar?</div>
+      <div class="doubt"><span class="dot"></span>E se eu começar e não conseguir continuar?</div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTINE -->
+<section class="routine">
+  <div class="narrow">
+    <span class="eyebrow">Para quem sente que falta algo</span>
+    <h2>A rotina pode estar cheia. E o dia, como está?</h2>
+    <p>A semana funciona. As tarefas saem. As metas vêm. E ainda assim pode ficar a sensação de que algo importante está fora do dia.</p>
+    <p>Não é insatisfação com o que você já tem. É a falta de algo que não cabe em planilha, mas cabe em causa.</p>
+    <p class="pull">Voluntariado não é mais uma obrigação na sua agenda. É um jeito de colocar em movimento uma parte sua que estava esperando direção.</p>
+  </div>
+</section>
+
+<!-- PARTS -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">O que está dentro</span>
+      <h2>Um guia em 6 partes. Uma jornada para sair da intenção.</h2>
+      <p>Da primeira faísca de vontade até saber como encontrar sua primeira oportunidade real. Cada parte te leva um passo adiante.</p>
+    </div>
+    <div class="parts">
+      <article class="part"><div class="num">1</div><h3>O Despertar</h3><p>Aquela vontade que ainda não virou ação ganha nome. E direção.</p></article>
+      <article class="part"><div class="num">2</div><h3>O Entendimento</h3><p>Por que o Brasil precisa de você, e quais formatos de voluntariado existem.</p></article>
+      <article class="part"><div class="num">3</div><h3>A Escolha</h3><p>As 6 perguntas que revelam sua vocação. Você sai do “não sei por qual causa começar”.</p></article>
+      <article class="part"><div class="num">4</div><h3>A Segurança</h3><p>Como achar oportunidades confiáveis, seus direitos na Lei do Voluntariado e o autocuidado de quem ajuda.</p></article>
+      <article class="part"><div class="num">5</div><h3>A Ação</h3><p>Do guia ao app: como encontrar oportunidades reais e dar o primeiro passo com mais clareza.</p></article>
+      <article class="part"><div class="num">6</div><h3>Ferramentas Práticas</h3><p>As 3 ferramentas bônus que transformam intenção em primeiro passo.</p></article>
+    </div>
+    <p class="parts-foot">23 capítulos + 3 ferramentas práticas · 41 páginas de caminho, não de teoria.</p>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow" style="color:var(--amber)">Não é só leitura</span>
+      <h2>Você não recebe inspiração. Você recebe direção.</h2>
+    </div>
+    <div class="tool-grid">
+      <div class="tool"><span class="tag">Ferramenta 1</span><h3>Checklist do Voluntário Preparado</h3><p>O que observar antes, durante e depois de cada ação. Você imprime, leva, segue. Não esquece nada importante.</p></div>
+      <div class="tool"><span class="tag">Ferramenta 2</span><h3>Modelo de Termo de Adesão</h3><p>Modelo orientativo baseado na Lei do Voluntariado. Você entende como formalizar com clareza e segurança.</p></div>
+      <div class="tool"><span class="tag">Ferramenta 3</span><h3>Teste Vocacional Solidário</h3><p>Identifica seu perfil em 10 minutos: presencial, comunicação, estratégia ou digital. Você sai sabendo onde se encaixa.</p></div>
+    </div>
+    <a href="#oferta" class="btn">Quero acessar o guia agora: R$ 47</a>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom">
+  <div class="narrow">
+    <div class="head" style="margin-bottom:1rem">
+      <span class="eyebrow">É pra você se…</span>
+      <h2>Este guia é pra você se…</h2>
+    </div>
+    <ul>
+      <li>…você quer ajudar, mas cada vez que pesquisa surgem mais dúvidas que respostas.</li>
+      <li>…você termina o dia ocupado, mas com a sensação de que algo está fora do lugar.</li>
+      <li>…você nunca foi voluntário e tem medo de começar errado.</li>
+      <li>…você já ajudou antes, a vida mudou, e quer retomar.</li>
+      <li>…você ama uma causa específica (animais, infância, idosos, meio ambiente) e quer atuar por ela.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Uma comunidade de verdade</span>
+      <h2>Criada para transformar vontade em ação</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="n">180k+</div><div class="l">Usuários</div></div>
+      <div class="stat"><div class="n">1.500+</div><div class="l">Instituições</div></div>
+      <div class="stat"><div class="n">5.700+</div><div class="l">Oportunidades</div></div>
+      <div class="stat"><div class="n">17</div><div class="l">Causas</div></div>
+    </div>
+    <p class="micro">Presente em todo o Brasil, do voluntariado presencial ao digital.</p>
+    <div class="founder" style="margin-top:2.5rem">
+      <p>Marcus Rubortone, fundador, atua na Solidarizando desde março de 2022.</p>
+      <p>Antes disso, viveu a sensação de “vontade sem caminho” por três anos. O guia foi escrito para encurtar esse tempo de espera para qualquer outra pessoa.</p>
+    </div>
+    <p class="micro">Dados de junho/2026.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Histórias da comunidade</span>
+      <h2>Histórias reais da comunidade Solidarizando</h2>
+      <p>Relatos de pessoas e instituições que mostram o que acontece quando a vontade encontra um caminho.</p>
+    </div>
+    <div class="tcards">
+      <article class="tcard">
+        <div class="video"><iframe src="https://www.youtube.com/embed/aK1wFoZx7jg" title="Depoimento Carol" loading="lazy" allowfullscreen></iframe></div>
+        <div class="body"><blockquote>“Queria ajudar, mas não sabia por onde começar.”</blockquote><cite>Carol · Voluntária pela Solidarizando</cite></div>
+      </article>
+      <article class="tcard">
+        <div class="video"><iframe src="https://www.youtube.com/embed/5u_uNCfgmF4" title="Depoimento Suzan" loading="lazy" allowfullscreen></iframe></div>
+        <div class="body"><blockquote>“Me voluntariei e, no mesmo dia, tive o retorno.”</blockquote><cite>Suzan · Voluntária no Instituto Potência das Quebradas</cite></div>
+      </article>
+      <article class="tcard">
+        <div class="video"><iframe src="https://www.youtube.com/embed/JrLTmkzDs_o" title="Depoimento Elizabeth" loading="lazy" allowfullscreen></iframe></div>
+        <div class="body"><blockquote>“Quando a instituição buscava voluntários, a Solidarizando fez a conexão. Existe um antes e um depois.”</blockquote><cite>Elizabeth · Presidente do Instituto Potência das Quebradas</cite></div>
+      </article>
+    </div>
+    <p class="micro" style="margin-top:1.6rem">Depoimentos de voluntários e instituições da plataforma Solidarizando. O nome de cada pessoa aparece no vídeo, com autorização.</p>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Comece hoje</span>
+      <h2>O guia tem um custo. Continuar parado também.</h2>
+    </div>
+    <div class="offer-card">
+      <div class="top">
+        <ul class="offer-list">
+          <li><span class="check">✓</span>Guia Completo do Voluntariado no Brasil (6 partes, 23 capítulos)</li>
+          <li><span class="check">✓</span>Checklist do Voluntário Preparado</li>
+          <li><span class="check">✓</span>Modelo de Termo de Adesão Voluntária</li>
+          <li><span class="check">✓</span>Teste Vocacional Solidário</li>
+        </ul>
+      </div>
+      <div class="price-row">
+        <div class="lab">Preço de lançamento</div>
+        <div class="price">R$ 47</div>
+        <div class="meta">Acesso imediato · Pagamento seguro via Kiwify · 7 dias de garantia</div>
+        <a href="KIWIFY_CHECKOUT_URL" class="btn">Começar minha jornada por R$ 47</a>
+      </div>
+    </div>
+    <p class="offer-note">R$ 47 compra um caminho claro: da primeira dúvida até saber como encontrar e escolher uma oportunidade real. Mas o custo que pesa de verdade não é esse. É o de continuar parado por mais um mês, mais um ano, com a vontade intacta e nenhum passo dado.</p>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="narrow">
+    <div class="seal"><b>7</b><span>dias</span></div>
+    <h2>Garantia incondicional de 7 dias</h2>
+    <p>Você tem 7 dias para acessar o guia, ler, aplicar e decidir. Se sentir que não é para você, pode solicitar reembolso direto pela Kiwify. Recebe tudo de volta. Sem perguntas, sem burocracia. O risco é meu. Seu papel é só dar o primeiro passo.</p>
+    <p class="sig">Marcus Rubortone · fundador da Solidarizando</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Ainda em dúvida?</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>Se o app é gratuito, por que comprar o guia?</summary><p>O app é gratuito e conecta você às oportunidades. O guia é pago porque prepara você para escolher uma causa, entender seu perfil, começar com segurança e transformar vontade em ação com mais clareza. Um mostra onde agir. O outro te ajuda a dar o passo certo.</p></details>
+      <details><summary>E se não tiver oportunidade na minha cidade?</summary><p>A Solidarizando está presente em todo o Brasil, nos 27 estados, e cresce todo mês. Mesmo que ainda não exista uma ação presencial pertinho de você, há oportunidades de voluntariado digital, que dá pra fazer de qualquer lugar. O guia te ajuda a encontrar o formato que cabe na sua realidade.</p></details>
+      <details><summary>Nunca fui voluntário. Este guia serve pra mim?</summary><p>Foi escrito exatamente para quem está começando, ou para quem já ajudou antes e quer voltar com mais clareza.</p></details>
+      <details><summary>Tenho pouco tempo. Ainda assim posso ser voluntário?</summary><p>Sim. O guia mostra ações pontuais e remotas que cabem em diferentes rotinas.</p></details>
+      <details><summary>O guia mostra onde encontrar oportunidades?</summary><p>Mostra. E te conecta direto à Solidarizando, com mais de 5.700 oportunidades reais.</p></details>
+      <details><summary>O pagamento é seguro?</summary><p>Sim. Toda compra acontece pela Kiwify, ambiente seguro padrão de mercado.</p></details>
+      <details><summary>Recebo o acesso imediatamente?</summary><p>Sim. Após confirmação do pagamento, o link chega no seu e-mail em minutos.</p></details>
+      <details><summary>Posso pedir reembolso?</summary><p>Pode, dentro de 7 dias, direto pela Kiwify. Sem perguntas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="narrow">
+    <h2>Talvez o que falte na sua semana não seja outra meta. Talvez seja uma causa.</h2>
+    <p>Você não precisa mudar a vida toda.</p>
+    <p>Só precisa do primeiro passo real.</p>
+    <p>Te vejo do outro lado.</p>
+    <a href="#oferta" class="btn">Quero acessar o guia agora: R$ 47</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <img class="flogo" src="https://solidarizando.activehosted.com/content/6dqGbk/2026/05/07/2d1da1a2-e101-4049-bcf0-b5241d5a9e60.png" alt="Solidarizando">
+    <div class="social">
+      <a href="https://facebook.com/solidarizando.oficial">Facebook</a>
+      <a href="https://instagram.com/solidarizando.oficial">Instagram</a>
+      <a href="https://www.linkedin.com/company/plataforma-social-solidarizando/posts/?feedView=all">LinkedIn</a>
+      <a href="https://www.youtube.com/channel/UCU_DKyXVMBDrLNEMsAWpyOw">YouTube</a>
+    </div>
+    <div class="flinks">
+      <a href="#">Termos de uso</a>
+      <a href="https://solidarizando.ac-page.com/LINK_PRIVACIDADE">Política de privacidade</a>
+      <a href="#">Contato / Suporte</a>
+    </div>
+    <p class="legal">© 2026 Plataforma Social Solidarizando Ltda. · CNPJ INSERIR_CNPJ · Todos os direitos reservados. Este produto não garante resultados. O voluntariado depende de cada pessoa, instituição e disponibilidade das oportunidades.</p>
+  </div>
+</footer>
+
+</body>
+</html>
