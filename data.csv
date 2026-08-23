@@ -1,0 +1,11 @@
+produto,preco,quantidade_estoque,categoria
+Arroz,4.99,100.0,Grãos
+Feijão,5.49,,Grãos
+Macarrão,,150.0,Massas
+Açúcar,3.89,200.0,
+Café,7.99,,Bebidas
+Óleo,6.5,180.0,Óleos
+Sal,,90.0,Temperos
+Farinha,4.2,120.0,Farinhas
+Leite,3.75,130.0,Laticínios
+Molho,2.99,,Molhos
