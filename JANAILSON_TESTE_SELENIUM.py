@@ -43,7 +43,7 @@ pd.set_option('display.max_columns', None)  # Exibe todas as colunas
 pd.set_option('display.max_colwidth', None) # Não corta textos longos (ex: URLs)
 pd.set_option('display.width', 1000)        # Aumenta a largura total da linha do terminal
 df = pd.DataFrame(dados) # cria um DataFrame com os dados coletados
-print(df.head()) # imprime os dados coletados
+print(df) # imprime os dados coletados
 
 
 df.to_csv("dados_brutos.csv", index=False, encoding='utf-8-sig', sep=';') # cria um arquivo csv
