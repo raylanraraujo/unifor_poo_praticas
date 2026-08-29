@@ -1,23 +1,32 @@
 from selenium import webdriver # e a ferramenta que permite controlar o navegador
 from selenium.webdriver.common.by import By # diz ao Selenium como queremos localizar um elemento: por classe, por seletor CSS.
+from selenium.webdriver.common.keys import Keys
 import time # serve para fazer o programa esperar alguns segundos
 import pandas as pd # serve para manipular os dados
 
-navegador = webdriver.Safari() # abre o navegador
-
-navegador.get("https://lista.mercadolivre.com.br/iphone") # faz a requisição na url do site
-
+navegador = webdriver.Chrome() # abre o navegador
+navegador.get("https://lista.mercadolivre.com.br/") # faz a requisição na url do site
 time.sleep(5) # espera 5 segundos para o site carregar
+campo_busca = navegador.find_element(By.NAME, "as_word")
+campo_busca.send_keys("samsung")
+campo_busca.send_keys(Keys.ENTER)
+time.sleep(5) # Aguarda o carregamento dos resultados
 
 fonte = "mercadolivre" 
-categoria = "smartphone"
-subcategoria = "iphone"
+# categoria = "smartphone"
+categoria = navegador.find_element(By.CLASS_NAME, "andes-breadcrumb__link").text.strip()
+loja = ""
 
 produtos = navegador.find_elements(By.CLASS_NAME, "ui-search-layout__item") # procura os elementos com a classe ui-search-layout__item
 
 dados = [] # cria uma lista vazia para armazenar os dados dos produtos
 
 for produto in produtos:
+    try:
+        loja = produto.find_element(By.CLASS_NAME, "poly-component__seller").text.strip()
+    except:
+        loja = "N/A"
+
     titulo = produto.find_element(By.CLASS_NAME, "poly-component__title") # procura o elemento com onome dessa classe dentro do primeiro produto
 
     url_produto = titulo.get_attribute("href") # pega o link do produto
@@ -27,13 +36,15 @@ for produto in produtos:
     preco = preco_atual.find_element(By.CLASS_NAME, "andes-money-amount") # procura o elemento com onome dessa classe dentro do primeiro produto
 
     preco_aria = preco.get_attribute("aria-label") # pega o texto do elemento encontrado
+ 
+    preco_valor = preco.find_element(By.CLASS_NAME, "andes-money-amount__fraction").text
 
     registro = {
         "fonte": fonte,
         "categoria": categoria,
-        "subcategoria": subcategoria,
+        "Loja": loja,
         "titulo": titulo.text,
-        "preco": preco_aria,
+        "preco": preco_valor,
         "url_produto": url_produto
     }
 
@@ -48,7 +59,4 @@ print(df) # imprime os dados coletados
 
 df.to_csv("dados_brutos.csv", index=False, encoding='utf-8-sig', sep=';') # cria um arquivo csv
     
-
-input("Pressione enter para sair") # espera o usuario apertar enter para sair
-
-
+navegador.quit()
