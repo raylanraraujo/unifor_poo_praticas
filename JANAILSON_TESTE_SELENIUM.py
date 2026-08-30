@@ -8,7 +8,7 @@ navegador = webdriver.Chrome() # abre o navegador
 navegador.get("https://lista.mercadolivre.com.br/") # faz a requisição na url do site
 time.sleep(5) # espera 5 segundos para o site carregar
 campo_busca = navegador.find_element(By.NAME, "as_word")
-campo_busca.send_keys("samsung")
+campo_busca.send_keys("iphone")
 campo_busca.send_keys(Keys.ENTER)
 time.sleep(5) # Aguarda o carregamento dos resultados
 
@@ -53,7 +53,9 @@ for produto in produtos:
 pd.set_option('display.max_columns', None)  # Exibe todas as colunas
 pd.set_option('display.max_colwidth', None) # Não corta textos longos (ex: URLs)
 pd.set_option('display.width', 1000)        # Aumenta a largura total da linha do terminal
+
 df = pd.DataFrame(dados) # cria um DataFrame com os dados coletados
+#df['url_produto'] = df['url_produto'].str.slice(0, 40) + '...' #diminui o tamanho da coluna url_produto para 40 caracteres e adiciona "..." no final
 print(df) # imprime os dados coletados
 
 
