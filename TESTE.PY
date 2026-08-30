@@ -39,12 +39,12 @@ chaves_desejadas = [
     "Cor", 
     "Memória interna", 
     "Memória RAM", 
-    "Modelo do processador", 
-    "Tamanho da tela", 
-    "Resolução da câmera traseira principal", 
-    "Resolução da câmera frontal principal", 
-    "Rede móvel", 
-    "Ano de lançamento"
+    # "Modelo do processador", 
+    # "Tamanho da tela", 
+    # "Resolução da câmera traseira principal", 
+    # "Resolução da câmera frontal principal", 
+    # "Rede móvel", 
+    # "Ano de lançamento"
 ]
 
 # Cria um novo dicionário contendo apenas os campos da lista
