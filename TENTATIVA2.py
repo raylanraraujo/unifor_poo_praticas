@@ -1,14 +1,27 @@
 import time
 import pandas as pd
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options  # <-- IMPORTANTE ADICIONAR ESSA LINHA
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-# Inicializa o navegador
-navegador = webdriver.Safari()
+# --- CONFIGURAÇÕES PARA EVITAR O BLOQUEIO ---
+options = Options()
+options.add_argument("--disable-blink-features=AutomationControlled")
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
+options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
+# Inicializa o navegador com as opções acima
+navegador = webdriver.Chrome(options=options)
+
+# Executa script para ocultar a flag de automação
+navegador.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+# --------------------------------------------
+
+# Agora segue a abertura do site normalmente
 navegador.get("https://lista.mercadolivre.com.br/")
 
 # Aguarda até o campo de busca estar pronto e clicavel

@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import time # serve para fazer o programa esperar alguns segundos
 import pandas as pd # serve para manipular os dados
 
-navegador = webdriver.Chrome() # abre o navegador
+navegador = webdriver.Safari() # abre o navegador
 navegador.get("https://lista.mercadolivre.com.br/") # faz a requisição na url do site
 time.sleep(5) # espera 5 segundos para o site carregar
 campo_busca = navegador.find_element(By.NAME, "as_word")
